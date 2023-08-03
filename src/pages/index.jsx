@@ -3,6 +3,7 @@ import DefaultLayout from '@/layout/defaultLayout'
 import Hero from "@/components/hero"
 import CardSection from '@/components/cardsection'
 import Info from '@/components/info'
+import RandomSection from '@/components/randomsection'
 import styles from '@/styles/Home.module.scss'
 
 
@@ -20,6 +21,7 @@ export default function Home({data}) {
           <Hero />
           <CardSection data={data} />
           <Info data={data} />
+          <RandomSection data={data} />
         </main>
       </DefaultLayout>
     </>
