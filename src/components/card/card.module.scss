@@ -1,39 +1,48 @@
 .Card {
+    @extend %cardshape;
+    width: 300px;
+    height: 300px;
+    @include flex(column, flex-start, space-between, nowrap);
     &__Header{
+        @include flex(column, flex-start, center, nowrap);
+        width: 100%;
+        height: 25%;
         &__Detail {
-            &__Price {}
-            &__Info {}
+            @include flex(row, flex-end, baseline, nowrap);
+            &__Price {
+             @extend %subtitle;
+            }
+            &__Info {
+            @extend %details;
+            padding: 2px;
+            }
         }
         &__Title {
-            &__Text {}
+            @extend %maintitle;
+            &__Text {
+                @extend %maintitle;
+                
+            }
         }
 }
     &__Main {
+        @include flex(column, flex-start, space-between, nowrap);
+        width: 100%;
+        height: 45%;
         &__Info {
-            .Info__Port {
-                &__Text {
-                    
-                }
-                &__Name {
-
-                }
-            }
-            .Info__Transport {
-                &__Detail {
-
-                }
-                &__Time {
-
-                }
-            }
+            @include flex(row, flex-start, center, nowrap);
+            
         }
 
         &__Detail {
+            @include flex(row, center, space-between, nowrap);
             &__Departure {
                 .Detail__Departure__Date {
+                    @extend %details;
 
                 }
                 .Detail__Departure__Time {
+                    @extend %details;
                     
                 }
             }
@@ -41,28 +50,54 @@
 
             }
             &__Arrival {
+                @include flex(column, center, center, nowrap);
                 .Detail__Arrival__Date {
+                    @extend %details;
 
                 }
-                .Detail__Arrival__Date {
+                .Detail__Arrival__Time {
+                    @extend %details;
 
                 }
             }
         }
     }
+    
     &__Footer {
+        @include flex(column, flex-start, center, nowrap);
+        width: 100%;
+        height: 40%;
         &__Info {
-            .Card__Footer__Type {
-
-            }
-            .Card__Footer__Available {
-
-            }
-        &__Button {
-            &__Text {
-
-            }
-        }
+            @include flex(column, flex-start, center, nowrap);
         }
     }
+}
+
+.Info__Port {
+    &__Text {
+        @extend %details;
+        
+    }
+    &__Name {
+        @extend %subtitle;
+    }
+}
+.Info__Transport {
+    @include flex(column, flex-start, center, nowrap);
+    &__Detail {
+        @extend %details;
+
+    }
+    &__Time {
+        @extend %details;
+
+    }
+}
+
+.Card__Footer__Type {
+    @extend %details;
+}
+.Card__Footer__Available {
+    @extend %details;
+
 }

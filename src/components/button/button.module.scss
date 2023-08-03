@@ -1,0 +1,7 @@
+.Button {
+    @include flex(row, center, center, nowrap);
+    @extend %buttonshape;
+    &__Text {
+        @extend %button;
+    }
+}

@@ -1,6 +1,6 @@
 @use "sass:math";
 
-$basesize: 16px;
+$basesize: 18px;
 @function rem($px) {
   @return math.div($px, $basesize) * 1rem;
 }
@@ -14,7 +14,7 @@ $basesize: 16px;
     font-family: $main-font;
 }
 
-%mainTitle {
+%maintitle {
     font-size: rem($h1-fontsize);
     font-weight: $bold;
     margin: 0;
@@ -23,7 +23,7 @@ $basesize: 16px;
     font-family: $main-font;
 }
 
-%subtitleprice  {
+%subtitle  {
     font-size: rem($h2-fontsize);
     font-weight: $semibold;
     margin: 0;
@@ -38,6 +38,7 @@ $basesize: 16px;
     margin: 0;
     padding: 0;
     font-family: $main-font;
+    color: $background-color;
 }
 
 %details  {
@@ -68,10 +69,12 @@ $basesize: 16px;
 %buttonshape {
     text-align: center;
     cursor: pointer;
+    width: 240px;
+    height: 40px;
     padding: 12px;
     margin: 12px;
     border-radius: 12px;
-    color: $main-color;
+    background-color: $main-color;
 }
 
 @mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
