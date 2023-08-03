@@ -1,0 +1,68 @@
+.Card {
+    &__Header{
+        &__Detail {
+            &__Price {}
+            &__Info {}
+        }
+        &__Title {
+            &__Text {}
+        }
+}
+    &__Main {
+        &__Info {
+            .Info__Port {
+                &__Text {
+                    
+                }
+                &__Name {
+
+                }
+            }
+            .Info__Transport {
+                &__Detail {
+
+                }
+                &__Time {
+
+                }
+            }
+        }
+
+        &__Detail {
+            &__Departure {
+                .Detail__Departure__Date {
+
+                }
+                .Detail__Departure__Time {
+                    
+                }
+            }
+            &__Icon {
+
+            }
+            &__Arrival {
+                .Detail__Arrival__Date {
+
+                }
+                .Detail__Arrival__Date {
+
+                }
+            }
+        }
+    }
+    &__Footer {
+        &__Info {
+            .Card__Footer__Type {
+
+            }
+            .Card__Footer__Available {
+
+            }
+        &__Button {
+            &__Text {
+
+            }
+        }
+        }
+    }
+}
