@@ -1,0 +1,90 @@
+$basesize: 16px;
+@function rem($px) {
+  @return math.div($px, $basesize) * 1rem;
+}
+
+%display {
+    font-weight: $bold;
+    margin: 0;
+    padding: 0;
+    font-size: rem($display-fontsize);
+    color: $background-color;
+}
+
+%mainTitle {
+    font-size: rem($h1-fontsize);
+    font-weight: $bold;
+    margin: 0;
+    padding: 0;
+    color: $text-color;
+}
+
+%subtitleprice  {
+    font-size: rem($h2-fontsize);
+    font-weight: $semibold;
+    margin: 0;
+    padding: 0;
+    color: $text-color;
+}
+
+%button {
+    font-size: rem($h3-fontsize);
+    font-weight: $semibold;
+    margin: 0;
+    padding: 0;
+}
+
+%details  {
+    font-size: rem($h4p-fontsize);
+    font-weight: $regular;
+    margin: 0;
+    padding: 0;
+    color: $detail-color;
+}
+
+%oricedetails {
+    font-size: rem($h5-fontsize);
+    font-weight: $regular;
+    margin: 0;
+    padding: 0;
+    color: $text-color
+}
+
+%cardshape {
+    padding: 12px;
+    margin: 12px;
+    border-radius: 12px;
+    background-color: $element-color;
+}
+
+%buttonshape {
+    text-align: center;
+    cursor: pointer;
+    padding: 12px;
+    margin: 12px;
+    border-radius: 12px;
+    color: $main-color;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+  }
+
+@mixin flexDirection($value, $align) {
+    display: flex;
+    flex-direction: $value;
+    justify-content: space-around;
+    align-items: $align;
+    
+}
+
+@mixin centerAbsolute($xPerc, $yPerc) {
+        transform: translateX($xPerc);
+        transform: translateY($yPerc);
+  }
+
+
