@@ -1,4 +1,4 @@
-.Hero {
+.Info {
     width: 100vw;
     height: 80vh;
     background-color: $detail-color;
@@ -16,14 +16,19 @@
         height: 100%;
         @include position(absolute, 0, null, null, 0);
         background-color: #0000003f;
-
     }
-    &__Display {
-        @extend %display;
+    .Data {
+        @include flex(row, center, center, wrap);
+        gap: 20px;
         @include position(absolute, 50%, null, null, 50%);
         @include centerAbsolute(-50%, -50%);
         text-align: center;
+        @extend %subtitle;
         z-index: 2;
+        &__Container {
+            color: white;
+            padding: 0;
+            margin: 0;
+        }
     }
 }
-

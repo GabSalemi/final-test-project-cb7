@@ -2,6 +2,7 @@ import Head from 'next/head'
 import DefaultLayout from '@/layout/defaultLayout'
 import Hero from "@/components/hero"
 import CardSection from '@/components/cardsection'
+import Info from '@/components/info'
 import styles from '@/styles/Home.module.scss'
 
 
@@ -18,6 +19,7 @@ export default function Home({data}) {
         <main className={styles.Main}>
           <Hero />
           <CardSection data={data} />
+          <Info data={data} />
         </main>
       </DefaultLayout>
     </>
