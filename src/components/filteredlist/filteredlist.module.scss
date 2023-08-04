@@ -1,4 +1,8 @@
 .Filtered {
     width: 100vw;
     height: auto;
+    @include flex(row, center, center, wrap);
+    &__Section__Wrapper {
+        @include flex(row, center, center, wrap);
+    }
 }

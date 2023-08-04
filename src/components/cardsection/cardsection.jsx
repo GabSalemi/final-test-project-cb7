@@ -22,7 +22,7 @@ const CardSection = ({data}) => {
                     return <Card data={item} key={item.id} />
                 })}
                 <div className={styles.Card__Section__Button} >
-                    {closeButton ? <div></div> : <div></div>}
+                    {closeButton ? <div className={styles.More__Button} onClick={onHandleShowMore}>Mostra meno</div> : <div className={styles.More__Button} onClick={onHandleShowMore}>Mostra altri</div>}
                 </div>
         </div>
 }

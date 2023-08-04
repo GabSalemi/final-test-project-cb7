@@ -1,0 +1,14 @@
+.Dropdown {
+    width: 200px;
+    height: auto;
+    &__Select {
+        @extend %dropdownshape;
+        padding: 16px;
+        margin: 16px;
+        text-align: center;
+        &__Option {
+            padding: 20px;
+
+        }
+    }
+}
