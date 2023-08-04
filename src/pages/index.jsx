@@ -15,6 +15,7 @@ import FilteredList from '@/components/filteredlist'
 
 export default function Home({data}) {
   const { state, dispatch } = useContext(MainContext);
+  const [value, setValue] = useState(state.value)
   
   return (
     <>

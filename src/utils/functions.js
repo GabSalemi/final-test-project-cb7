@@ -1,7 +1,3 @@
-export const showMoreCounter = (count) => {
-    
-}
-
 export const randomizer = (array) => {
     const randomObject = array.sort((a, b) => 0.5 - Math.random());
     const sliced = randomObject.slice(0, 9)
@@ -38,12 +34,7 @@ export const getSpecificData = (data, key) => {
     }
 }
 
-export const dataFinder = (data, value) => {
-    
-
-    let filterByName = "culo"
-    
-    return filterByName;
-
+export const filteredByPort = (data, value) => {  
+    return data.filter((item) => item.departure.Port === value)
 }
 

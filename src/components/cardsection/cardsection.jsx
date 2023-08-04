@@ -4,16 +4,25 @@ import Button from "../button";
 import styles from "@/components/cardsection/cardsection.module.scss";
 
 const CardSection = ({data}) => {
-    const [showMore, setShowMore] = useState(false)
-    const [showMoreSlicer, setShowMoreSlicer] = useState()
-    const showMoreCounter = useRef(0)
+    const [closeButton, setCloseButton] = useState(false)
+    const [showMoreSlicer, setShowMoreSlicer] = useState(8)
+
+    const onHandleShowMore = () => {
+        if (showMoreSlicer >= 32) {
+            setShowMoreSlicer(8)
+        } else {
+            setShowMoreSlicer(prev => prev + 8)
+        }
+
+    }
+
 
     return <div className={styles.Card__Section}>
                 {data.slice(0, showMoreSlicer).map((item) => {
                     return <Card data={item} key={item.id} />
                 })}
-                <div className={styles.Card__Section__Button} onClick={showMoreCounter}>
-                    <Button text={"Mostra Altri"}/>
+                <div className={styles.Card__Section__Button} >
+                    {closeButton ? <div></div> : <div></div>}
                 </div>
         </div>
 }

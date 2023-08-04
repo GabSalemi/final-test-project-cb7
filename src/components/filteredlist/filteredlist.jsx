@@ -1,20 +1,20 @@
 import { useState, useContext, useReducer } from "react"
 import { MainContext } from "@/state"
-import { dataFinder } from "@/utils/functions"
+import { filteredByPort } from "@/utils/functions"
 import Card from "../card"
 
 import styles from "./filteredlist.module.scss"
 
 const FilteredList = ({data, value}) => {
-    const [filteredData, setFilteredData] = useState(() => dataFinder(data, value))
-    
 
     return <div className={styles.Filtered}>
-                {filteredData.map((item) => {
-                    <Card data={item} />
-                })}
+            {data.filter((item) => item.departure.Port === value).map((item) => {
+                                        return <div className={styles.Filtered__Section__Wrapper}>
+                                            <Card data={item} key={item.id}/>
+                                                </div>
+                                            })}
+                
             </div>
-
 }   
 
 export default FilteredList;
