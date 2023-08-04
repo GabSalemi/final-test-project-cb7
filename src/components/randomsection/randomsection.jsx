@@ -2,6 +2,7 @@ import Card from "../card/card";
 import { useState } from "react";
 import { randomizer } from "@/utils/functions";
 import styles from "@/components/cardsection/cardsection.module.scss";
+import dynamic from "next/dynamic";
 
 
 const RandomSection = ({data}) => {
@@ -15,4 +16,4 @@ const RandomSection = ({data}) => {
         </div>
 }
 
-export default RandomSection;
+export default dynamic (() => Promise.resolve(RandomSection), {ssr: false})

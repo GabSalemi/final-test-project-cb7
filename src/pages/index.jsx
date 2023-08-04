@@ -1,14 +1,21 @@
 import Head from 'next/head'
 import DefaultLayout from '@/layout/defaultLayout'
 import Hero from "@/components/hero"
+import FilterBar from '@/components/filterbar'
 import CardSection from '@/components/cardsection'
-import FilteredList from '@/components/filteredlist'
+import GroupList from '@/components/grouplist'
 import Info from '@/components/info'
 import RandomSection from '@/components/randomsection'
 import styles from '@/styles/Home.module.scss'
+import { useState, useContext, useReducer } from 'react'
+import { MainContext } from '@/state'
+import { filterReducer } from '@/state/reducer'
+import FilteredList from '@/components/filteredlist'
 
 
 export default function Home({data}) {
+  const { state, dispatch } = useContext(MainContext);
+  
   return (
     <>
       <Head>
@@ -20,10 +27,12 @@ export default function Home({data}) {
       <DefaultLayout>
         <main className={styles.Main}>
           <Hero />
-          <FilteredList data={data}/>
-          {/* <CardSection data={data} /> */}
+          <FilterBar data={data} />
+          {state.filter === "Group" ? <GroupList data={data}/> : null}
+          {state.filter === "All" ? <CardSection data={data} /> : null}
+          {state.filter === "Filter" ? <FilteredList data={data} value={state.value} /> : null}
           <Info data={data} />
-          {/* <RandomSection data={data} /> */}
+          <RandomSection data={data} />
         </main>
       </DefaultLayout>
     </>
