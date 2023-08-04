@@ -1,0 +1,29 @@
+.Hero {
+    width: 100vw;
+    height: 80vh;
+    background-color: $detail-color;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    &__Image {
+        width: 100%;
+        position: relative;
+        height: 100%;
+        object-fit: cover;
+        }
+    &__Overlay {
+        width: 100%;
+        height: 100%;
+        @include position(absolute, 0, null, null, 0);
+        background-color: #0000003f;
+
+    }
+    &__Display {
+        @extend %display;
+        @include position(absolute, 50%, null, null, 50%);
+        @include centerAbsolute(-50%, -50%);
+        text-align: center;
+        z-index: 2;
+    }
+}
+

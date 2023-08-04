@@ -1,0 +1,110 @@
+@use "sass:math";
+
+$basesize: 20px;
+@function rem($px) {
+  @return math.div($px, $basesize) * 1rem;
+}
+
+%display {
+    font-weight: $bold;
+    margin: 0;
+    padding: 0;
+    font-size: rem($display-fontsize);
+    color: $background-color;
+    font-family: $main-font;
+}
+
+%maintitle {
+    font-size: rem($h1-fontsize);
+    font-weight: $bold;
+    margin: 0;
+    padding: 0;
+    color: $text-color;
+    font-family: $main-font;
+}
+
+%subtitle  {
+    font-size: rem($h2-fontsize);
+    font-weight: $semibold;
+    margin: 0;
+    padding: 0;
+    color: $text-color;
+    font-family: $main-font;
+}
+
+%button {
+    font-size: rem($h3-fontsize);
+    font-weight: $semibold;
+    margin: 0;
+    padding: 0;
+    font-family: $main-font;
+    color: $background-color;
+}
+
+%details  {
+    font-size: rem($h4p-fontsize);
+    font-weight: $regular;
+    margin: 0;
+    padding: 0;
+    font-family: $main-font;
+}
+
+%oricedetails {
+    font-size: rem($h5-fontsize);
+    font-weight: $regular;
+    margin: 0;
+    padding: 0;
+    color: $text-color;
+    font-family: $main-font;
+}
+
+%cardshape {
+    padding: 12px;
+    margin: 12px;
+    border-radius: 6px;
+    background-color: $element-color;
+}
+
+%buttonshape {
+    text-align: center;
+    cursor: pointer;
+    width: 240px;
+    height: 40px;
+    padding: 12px;
+    margin: 12px;
+    border-radius: 6px;
+    background-color: $main-color;
+}
+
+%dropdownshape {
+    text-align: center;
+    cursor: pointer;
+    width: 240px;
+    margin: 12px;
+    border-radius: 2px;
+    background-color: $background-color;
+    color: $text-color;
+
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+  }
+
+@mixin flex($direction, $align, $justify, $wrap: null) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}
+
+@mixin centerAbsolute($xPerc, $yPerc) {
+        transform: translate($xPerc, $yPerc);
+  }
+
+
