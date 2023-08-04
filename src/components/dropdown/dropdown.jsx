@@ -7,7 +7,6 @@ const Dropdown = ({options}) => {
     const { state, dispatch } = useContext(MainContext);
 
     const setGroup = (e, option = null) => {
-        console.log(e.target.value)
         if (e.target.value === "Mostra Tutti") {
             dispatch({type: "SET__ALL"})
         } else if (e.target.value === "Mostra per luogo di partenza") {
@@ -25,7 +24,7 @@ const Dropdown = ({options}) => {
                     return <option>{option.text}</option> 
                 }) : 
                 options.map( option => {
-                    return <option>{option}</option>
+                    return <option value={option}>{option}</option>
                 })
                 }
             </select> 
