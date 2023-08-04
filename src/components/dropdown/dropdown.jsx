@@ -18,13 +18,13 @@ const Dropdown = ({options}) => {
  
  
     return <div className={styles.Dropdown}>
-            <select onChange={(e) => setGroup(e)}>
+            <select onChange={(e) => setGroup(e)} className={styles.Dropdown__Select}>
                 {options[0].value ?
                 options.map( option => {
-                    return <option>{option.text}</option> 
+                    return <option className={styles.Dropdown__Select__Option}>{option.text}</option> 
                 }) : 
                 options.map( option => {
-                    return <option value={option}>{option}</option>
+                    return <option value={option} className={styles.Dropdown__Select__Option}>{option}</option>
                 })
                 }
             </select> 

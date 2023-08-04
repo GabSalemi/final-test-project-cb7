@@ -1,7 +1,7 @@
 import Card from "../card/card";
 import { useState } from "react";
 import { randomizer } from "@/utils/functions";
-import styles from "@/components/cardsection/cardsection.module.scss";
+import styles from "./randomsection.module.scss";
 import dynamic from "next/dynamic";
 
 
@@ -9,7 +9,7 @@ const RandomSection = ({data}) => {
     const [randomData, setRandomData] = useState(() => randomizer(data))
         
 
-    return <div className={styles.RandomSection}>
+    return <div className={styles.Random__Section}>
                 {randomData && randomData.map((item) => {
                     return <Card data={item} key={item.code}/>
                 })}

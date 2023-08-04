@@ -1,0 +1,9 @@
+.FilterBar {
+    @include flex(row, center, center, wrap);
+    width: 100%;
+    height: 100px;
+    &__Wrapper {
+        width: 50%;
+        height: auto;
+    }
+}

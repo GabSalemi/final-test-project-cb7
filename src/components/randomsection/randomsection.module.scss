@@ -1,7 +1,7 @@
-.RandomSection {
+.Random__Section {
+    @include flex(row, center, center, wrap);
     width: 100%;
     height: auto;
     background-color: $background-color;
-    @include flex(row, center, center, wrap);
     padding-top: 50px;
 }

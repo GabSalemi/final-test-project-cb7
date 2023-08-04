@@ -10,16 +10,13 @@ const GroupList = ({data}) => {
                 {filterDeparture && filterDeparture.map((value) => {
                     return <div className={styles.Group__Section}>
                                 <h2 className={styles.Group__Section__Value}>{value}</h2>
-                                    {data.filter((item) => item.departure.Port === value).map((item) => {
-                                        return <div className={styles.Group__Section__Wrapper}>
-                                            <Card data={item} key={item.id}/>
-                                                </div>
-                                            })
-                            
-                                }
+                                        <div className={styles.Group__Section__Wrapper}>
+                                            {data.filter((item) => item.departure.Port === value).map((item) => {
+                                                return <Card data={item} key={item.id}/>
+                                                })}
+                                        </div>
                             </div>
-                    
-                })}
+                        })}
             </div>
 }
 

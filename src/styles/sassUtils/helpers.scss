@@ -1,6 +1,6 @@
 @use "sass:math";
 
-$basesize: 18px;
+$basesize: 20px;
 @function rem($px) {
   @return math.div($px, $basesize) * 1rem;
 }
@@ -46,7 +46,6 @@ $basesize: 18px;
     font-weight: $regular;
     margin: 0;
     padding: 0;
-    color: $detail-color;
     font-family: $main-font;
 }
 
@@ -62,7 +61,7 @@ $basesize: 18px;
 %cardshape {
     padding: 12px;
     margin: 12px;
-    border-radius: 12px;
+    border-radius: 6px;
     background-color: $element-color;
 }
 
@@ -73,8 +72,19 @@ $basesize: 18px;
     height: 40px;
     padding: 12px;
     margin: 12px;
-    border-radius: 12px;
+    border-radius: 6px;
     background-color: $main-color;
+}
+
+%dropdownshape {
+    text-align: center;
+    cursor: pointer;
+    width: 240px;
+    margin: 12px;
+    border-radius: 2px;
+    background-color: $background-color;
+    color: $text-color;
+
 }
 
 @mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
