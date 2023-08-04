@@ -5,7 +5,7 @@ const CardSection = ({data}) => {
 
     return <div className={styles.Card__Section}>
                 {data.map((item) => {
-                    return <Card data={item} />
+                    return <Card data={item} key={item.id} />
                 })}
         </div>
 }

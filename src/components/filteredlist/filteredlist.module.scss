@@ -1,0 +1,18 @@
+.Filter {
+    width: 100%;
+    height: auto;
+    @include flex(column, center, center, nowrap);
+    &__Section {
+        width: 100%;
+        height: auto;
+    &__Value {
+        @extend %maintitle;
+        color: white;
+        background-color: $main-color;
+        text-align: end;
+    }
+    &__Wrapper {
+    @include flex(column, center, center, nowrap);
+    }
+    }
+}

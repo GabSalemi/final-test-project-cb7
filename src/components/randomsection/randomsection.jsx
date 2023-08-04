@@ -8,9 +8,9 @@ const RandomSection = ({data}) => {
     const [randomData, setRandomData] = useState(() => randomizer(data))
         
 
-    return <div className={styles.RandomSection__Section}>
+    return <div className={styles.RandomSection}>
                 {randomData && randomData.map((item) => {
-                    return <Card data={item} />
+                    return <Card data={item} key={item.code}/>
                 })}
         </div>
 }
