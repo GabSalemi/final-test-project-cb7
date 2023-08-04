@@ -2,6 +2,7 @@ import Head from 'next/head'
 import DefaultLayout from '@/layout/defaultLayout'
 import Hero from "@/components/hero"
 import CardSection from '@/components/cardsection'
+import FilteredList from '@/components/filteredlist'
 import Info from '@/components/info'
 import RandomSection from '@/components/randomsection'
 import styles from '@/styles/Home.module.scss'
@@ -19,9 +20,10 @@ export default function Home({data}) {
       <DefaultLayout>
         <main className={styles.Main}>
           <Hero />
-          <CardSection data={data} />
+          <FilteredList data={data}/>
+          {/* <CardSection data={data} /> */}
           <Info data={data} />
-          <RandomSection data={data} />
+          {/* <RandomSection data={data} /> */}
         </main>
       </DefaultLayout>
     </>
